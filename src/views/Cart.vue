@@ -1,12 +1,18 @@
 <template>
-  <div>
+  <v-container>
+    <breadcrumbs></breadcrumbs>
     CART
-  </div>
+  </v-container>
 </template>
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator'
+import Breadcrumbs from "@/components/common/Breadcrumbs.vue";
 
-@Component
+@Component({
+  components: {
+    Breadcrumbs
+  }
+})
 export default class Cart extends Vue {
 
 }

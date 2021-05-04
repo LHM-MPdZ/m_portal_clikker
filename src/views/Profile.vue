@@ -1,15 +1,9 @@
 <template>
-  <v-container>
-    <breadcrumbs></breadcrumbs>
-    <v-row>
-
-    </v-row>
-    <v-row>
-
-    </v-row>
-  </v-container>
+<v-container>
+  <breadcrumbs></breadcrumbs>
+  PROFILE
+</v-container>
 </template>
-
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator'
 import Breadcrumbs from "@/components/common/Breadcrumbs.vue";
@@ -19,7 +13,7 @@ import Breadcrumbs from "@/components/common/Breadcrumbs.vue";
     Breadcrumbs
   }
 })
-export default class Home extends Vue {
+export default class Profile extends Vue {
 
 }
 </script>
