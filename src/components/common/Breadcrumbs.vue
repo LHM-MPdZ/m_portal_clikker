@@ -12,7 +12,8 @@ export default class Breadcrumbs extends Vue {
 
   get breadcrumbs(): Breadcrumb[] {
     // add the home page per default
-    const home = new Breadcrumb("Startseite", "/", false)
+    const disabled = this.$route.path === "/" ? true : false
+    const home = new Breadcrumb("Startseite", "/", disabled)
     const items = new Array<Breadcrumb>()
     items.push(home)
 
