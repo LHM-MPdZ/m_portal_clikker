@@ -60,9 +60,7 @@
         <v-icon>mdi-format-size</v-icon>
       </v-btn>
 
-      <v-btn icon class="hidden-sm-and-down">
-        <v-icon>mdi-translate</v-icon>
-      </v-btn>
+      <language-menu></language-menu>
 
       <v-divider
           vertical
@@ -89,7 +87,13 @@
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator'
 
-@Component
+import LanguageMenu from "@/components/common/LanguageMenu.vue";
+
+@Component({
+  components: {
+    LanguageMenu
+  }
+})
 export default class App extends Vue {
   darkMode():void {
     this.$vuetify.theme.dark = !this.$vuetify.theme.dark

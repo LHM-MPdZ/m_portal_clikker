@@ -1,12 +1,7 @@
 <template>
   <v-container>
     <breadcrumbs></breadcrumbs>
-    <v-row>
-
-    </v-row>
-    <v-row>
-
-    </v-row>
+    <p>{{$t('home.hello')}}</p>
   </v-container>
 </template>
 
