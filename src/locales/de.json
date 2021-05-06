@@ -2,5 +2,12 @@
   "message": "Grüß Gott i18n !!",
   "home": {
     "hello": "Grüß Gott i18n !!"
+  },
+  "views": {
+    "home": "Startseite",
+    "cart": "Auswahl",
+    "state": "Status",
+    "search": "Suche",
+    "profile": "Profil"
   }
 }

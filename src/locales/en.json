@@ -2,5 +2,12 @@
   "message": "hello i18n !!",
   "home": {
     "hello": "hello i18n !!"
+  },
+  "views": {
+    "home": "Home",
+    "cart": "Selection",
+    "state": "State",
+    "search": "Search",
+    "profile": "Profile"
   }
 }

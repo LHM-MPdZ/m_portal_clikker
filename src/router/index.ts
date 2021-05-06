@@ -7,12 +7,12 @@ Vue.use(VueRouter)
 const routes: Array<RouteConfig> = [
   {
     path: '/',
-    name: 'Home',
+    name: 'home',
     component: Home
   },
   {
     path: '/cart',
-    name: 'Auswahl',
+    name: 'cart',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -20,7 +20,7 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: '/state',
-    name: 'Status',
+    name: 'state',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -28,7 +28,7 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: '/search',
-    name: 'Suche',
+    name: 'search',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -36,7 +36,7 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: '/profile',
-    name: 'Profil',
+    name: 'profile',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
