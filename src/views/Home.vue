@@ -2,6 +2,11 @@
   <v-container>
     <breadcrumbs></breadcrumbs>
     <p>{{$t('home.hello')}}</p>
+    <p>
+      <v-btn to="/services">
+        Formular
+      </v-btn>
+    </p>
   </v-container>
 </template>
 

@@ -8,6 +8,12 @@
     "cart": "Auswahl",
     "state": "Status",
     "search": "Suche",
-    "profile": "Profil"
+    "profile": "Profil",
+    "serviices": "Dienstleistungen"
+  },
+  "forms": {
+    "test": {
+      "name": "Nachname"
+    }
   }
 }
