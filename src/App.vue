@@ -81,6 +81,21 @@
     <v-main>
       <router-view/>
     </v-main>
+    <v-footer padless app elevation="2">
+      <v-sheet color="secondary" width="100%" height="35px">
+        <v-row class="pa-4">
+          <v-icon color="white" class="ml-5">
+            mdi-email
+          </v-icon>
+          <v-icon color="white"  class="ml-5">
+            mdi-twitter
+          </v-icon>
+          <v-spacer>
+          </v-spacer>
+          <span class="white--text body-2">&copy; 2021 Landeshauptstadt</span><v-icon color="red" class="mx-1" small>mdi-heart</v-icon><span class="white--text body-2 mr-3">München</span>
+        </v-row>
+      </v-sheet>
+    </v-footer>
   </v-app>
 </template>
 

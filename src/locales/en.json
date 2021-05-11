@@ -1,7 +1,10 @@
 {
   "message": "hello i18n !!",
   "home": {
-    "hello": "hello i18n !!"
+    "hello": "hello i18n !!",
+    "myservices": "Your Online Services",
+    "situation": "Your life situation",
+    "alert": "You have {num} new tasks in your account. Please check this."
   },
   "views": {
     "home": "Home",

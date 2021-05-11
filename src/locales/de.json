@@ -1,7 +1,10 @@
 {
   "message": "Grüß Gott i18n !!",
   "home": {
-    "hello": "Grüß Gott i18n !!"
+    "hello": "Grüß Gott i18n !!",
+    "myservices": "Ihre Online Services",
+    "situation": "Ihre Lebenssituation",
+    "alert": "Sie haben {num} neue Aufgaben in Ihrem Konto. Bitte prüfen Sie diese."
   },
   "views": {
     "home": "Startseite",

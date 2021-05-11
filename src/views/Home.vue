@@ -1,22 +1,25 @@
 <template>
   <v-container>
     <breadcrumbs></breadcrumbs>
-    <p>{{$t('home.hello')}}</p>
-    <p>
-      <v-btn to="/services">
-        Formular
-      </v-btn>
-    </p>
+    <task-alert></task-alert>
+    <service-slider></service-slider>
+    <situation-grid></situation-grid>
   </v-container>
 </template>
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator'
-import Breadcrumbs from "@/components/common/Breadcrumbs.vue";
+import Breadcrumbs from "@/components/common/Breadcrumbs.vue"
+import ServiceSlider from "@/components/home/ServiceSlider.vue";
+import TaskAlert from "@/components/home/TaskAlert.vue";
+import SituationGrid from "@/components/home/SituationGrid.vue";
 
 @Component({
   components: {
-    Breadcrumbs
+    Breadcrumbs,
+    ServiceSlider,
+    TaskAlert,
+    SituationGrid
   }
 })
 export default class Home extends Vue {
