@@ -19,7 +19,7 @@
           color="primary"
           @on-click="completeForm"
       >
-        Starten
+        {{ buttonText }}
       </loading-button>
     </v-flex>
   </v-form>
@@ -88,6 +88,9 @@ export default class TaskForm extends Vue {
   modelInit = false;
 
   parsedSchema: any = {};
+
+  @Prop()
+  buttonText!: string;
 
   @Prop()
   form!: FormTO;

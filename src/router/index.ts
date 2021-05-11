@@ -28,7 +28,12 @@ const routes: Array<RouteConfig> = [
     },
     {
         path: '/stateinstance/:instanceId',
-        component: () => import(/* webpackChunkName: "state" */ '../views/StateInstance'),
+        component: () => import(/* webpackChunkName: "state" */ '../views/StateInstance.vue'),
+        props: true
+    },
+    {
+        path: '/task/:taskId',
+        component: () => import(/* webpackChunkName: "state" */ '../views/Task.vue'),
         props: true
     },
     {

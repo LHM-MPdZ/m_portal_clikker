@@ -116,8 +116,47 @@ export const TaskControllerApiAxiosParamCreator = function (configuration?: Conf
             if (processinstanceId === null || processinstanceId === undefined) {
                 throw new RequiredError('processinstanceId','Required parameter processinstanceId was null or undefined when calling getAllTasksByProcessInstance.');
             }
-            const localVarPath = `/rest/task/{processinstanceId}`
+            const localVarPath = `/rest/task/processinstance/{processinstanceId}`
                 .replace(`{${"processinstanceId"}}`, encodeURIComponent(String(processinstanceId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            const query = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                query.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                query.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(query)).toString();
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getTaskById: async (id: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            if (id === null || id === undefined) {
+                throw new RequiredError('id','Required parameter id was null or undefined when calling getTaskById.');
+            }
+            const localVarPath = `/rest/task/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
@@ -192,6 +231,19 @@ export const TaskControllerApiFp = function(configuration?: Configuration) {
                 return axios.request(axiosRequestArgs);
             };
         },
+        /**
+         * 
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getTaskById(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TaskInfoTO>> {
+            const localVarAxiosArgs = await TaskControllerApiAxiosParamCreator(configuration).getTaskById(id, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
     }
 };
 
@@ -227,6 +279,15 @@ export const TaskControllerApiFactory = function (configuration?: Configuration,
          */
         getAllTasksByProcessInstance(processinstanceId: string, options?: any): AxiosPromise<Array<TaskInfoTO>> {
             return TaskControllerApiFp(configuration).getAllTasksByProcessInstance(processinstanceId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {string} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getTaskById(id: string, options?: any): AxiosPromise<TaskInfoTO> {
+            return TaskControllerApiFp(configuration).getTaskById(id, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -267,5 +328,15 @@ export class TaskControllerApi extends BaseAPI {
      */
     public getAllTasksByProcessInstance(processinstanceId: string, options?: any) {
         return TaskControllerApiFp(this.configuration).getAllTasksByProcessInstance(processinstanceId, options).then((request) => request(this.axios, this.basePath));
+    }
+    /**
+     * 
+     * @param {string} id 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TaskControllerApi
+     */
+    public getTaskById(id: string, options?: any) {
+        return TaskControllerApiFp(this.configuration).getTaskById(id, options).then((request) => request(this.axios, this.basePath));
     }
 }
