@@ -44,7 +44,7 @@
 import {Component, Emit, Prop, Vue} from "vue-property-decorator";
 
 @Component
-export default class LoadingButton extends Vue {
+export default class AppLoadingButton extends Vue {
 
   @Prop()
   isLoading: boolean | undefined;

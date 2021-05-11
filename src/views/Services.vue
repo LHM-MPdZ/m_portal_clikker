@@ -12,7 +12,7 @@
 import {Component, Vue} from 'vue-property-decorator'
 import Breadcrumbs from "@/components/common/Breadcrumbs.vue";
 import BaseForm from "@/components/form/BaseForm.vue";
-import {Form} from "@/types/Form";
+import {FormTO} from "@/api/models";
 
 @Component({
   components: {
@@ -22,7 +22,7 @@ import {Form} from "@/types/Form";
 })
 export default class Services extends Vue {
 
-  get schema(): Form {
+  get schema(): FormTO {
     const schema =
         {
           "key": "FeaturePortalIntegration_StartenV01",

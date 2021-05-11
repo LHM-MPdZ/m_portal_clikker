@@ -10,5 +10,11 @@
     "search": "Search",
     "profile": "Profile",
     "services": "Services"
+  },
+  "state": {
+    "headline": "My processes"
+  },
+  "form": {
+    "FormField_Name": "Enter anything right here..."
   }
 }

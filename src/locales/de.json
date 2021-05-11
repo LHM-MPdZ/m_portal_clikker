@@ -11,7 +11,11 @@
     "profile": "Profil",
     "serviices": "Dienstleistungen"
   },
-  "forms": {
+  "state": {
+    "headline": "Meine Vorgänge"
+  },
+  "form": {
+    "FormField_Name": "Hier etwas eingeben",
     "test": {
       "name": "Nachname"
     }
