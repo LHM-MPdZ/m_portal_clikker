@@ -9,5 +9,6 @@ export * from './item-to';
 export * from './process-config-to';
 export * from './process-instance-info-to';
 export * from './rule-to';
+export * from './start-service-to';
 export * from './status-config-to';
 export * from './task-info-to';

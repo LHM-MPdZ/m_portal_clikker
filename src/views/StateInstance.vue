@@ -5,7 +5,7 @@
         v-if="processInstance !== null"
     >
       <h1>{{ processInstance.processName }}</h1>
-      <p>{{ formatDate(processInstance) }}</p>
+      <p>Gestartet am {{ formatDate(processInstance) }}</p>
       <div class="box" v-if="processConfig !== null">
         <div class="progress mt-10">
           <div

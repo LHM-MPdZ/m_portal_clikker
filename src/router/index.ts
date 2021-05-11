@@ -37,6 +37,11 @@ const routes: Array<RouteConfig> = [
         props: true
     },
     {
+        path: '/startservice/:serviceKey',
+        component: () => import(/* webpackChunkName: "state" */ '../views/StartService.vue'),
+        props: true
+    },
+    {
         path: '/search',
         name: 'search',
         // route level code-splitting

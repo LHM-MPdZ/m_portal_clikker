@@ -1,16 +1,16 @@
 <template>
   <v-app>
     <v-app-bar
-      app
-      color="primary"
+        app
+        color="primary"
     >
       <v-toolbar-title>
         <v-btn
             to="/"
             icon>
-        <v-icon>mdi-home</v-icon>
+          <v-icon>mdi-home</v-icon>
         </v-btn>
-        <span class="hidden-sm-and-down">Münchner Dienstleistungsportal</span>
+        <span class="ml-2 hidden-sm-and-down">Münchner Dienstleistungsportal</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-text-field
@@ -27,21 +27,27 @@
           icon
           to="/state"
           class="hidden-sm-and-down">
-        <v-icon>mdi-format-list-checks</v-icon>
-      </v-btn>
-
-      <v-btn
-          icon
-          to="/cart"
-          class="hidden-sm-and-down">
         <v-badge
             overlap
             color="black"
             content="2"
         >
-          <v-icon>mdi-cart</v-icon>
+          <v-icon>mdi-format-list-checks</v-icon>
         </v-badge>
       </v-btn>
+
+      <!--      <v-btn-->
+      <!--          icon-->
+      <!--          to="/cart"-->
+      <!--          class="hidden-sm-and-down">-->
+      <!--        <v-badge-->
+      <!--            overlap-->
+      <!--            color="black"-->
+      <!--            content="2"-->
+      <!--        >-->
+      <!--          <v-icon>mdi-cart</v-icon>-->
+      <!--        </v-badge>-->
+      <!--      </v-btn>-->
 
       <v-divider
           vertical
@@ -87,12 +93,14 @@
           <v-icon color="white" class="ml-5">
             mdi-email
           </v-icon>
-          <v-icon color="white"  class="ml-5">
+          <v-icon color="white" class="ml-5">
             mdi-twitter
           </v-icon>
           <v-spacer>
           </v-spacer>
-          <span class="white--text body-2">&copy; 2021 Landeshauptstadt</span><v-icon color="red" class="mx-1" small>mdi-heart</v-icon><span class="white--text body-2 mr-3">München</span>
+          <span class="white--text body-2">&copy; 2021 Landeshauptstadt</span>
+          <v-icon color="red" class="mx-1" small>mdi-heart</v-icon>
+          <span class="white--text body-2 mr-3">München</span>
         </v-row>
       </v-sheet>
     </v-footer>
@@ -110,7 +118,7 @@ import LanguageMenu from "@/components/common/LanguageMenu.vue";
   }
 })
 export default class App extends Vue {
-  darkMode():void {
+  darkMode(): void {
     this.$vuetify.theme.dark = !this.$vuetify.theme.dark
   }
 }

@@ -52,6 +52,12 @@ export interface ProcessInstanceInfoTO {
      * @type {string}
      * @memberof ProcessInstanceInfoTO
      */
+    description: any;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProcessInstanceInfoTO
+     */
     statusKey: any;
     /**
      * 
