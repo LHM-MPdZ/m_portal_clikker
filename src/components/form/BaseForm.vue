@@ -19,7 +19,7 @@
           color="primary"
           @on-click="completeForm"
       >
-        Starten
+        {{ buttonText }}
       </loading-button>
     </v-flex>
   </v-form>
@@ -70,14 +70,14 @@
 
 <script lang="ts">
 import {Component, Emit, Prop, Ref, Vue} from "vue-property-decorator";
-import {Form} from "@/types/Form";
+import {FormTO} from "@/api/models";
 import VFormBase from 'vuetify-form-base';
-import LoadingButton from "@/components/common/LoadingButton.vue";
+import AppLoadingButton from "@/components/app/AppLoadingButton.vue";
 import {DateTime} from "luxon";
 
 @Component({
   components: {
-    LoadingButton,
+    LoadingButton: AppLoadingButton,
     VFormBase
   }
 })
@@ -90,7 +90,10 @@ export default class TaskForm extends Vue {
   parsedSchema: any = {};
 
   @Prop()
-  form!: Form;
+  buttonText!: string;
+
+  @Prop()
+  form!: FormTO;
 
   @Ref("form")
   myForm: any;
@@ -199,13 +202,16 @@ export default class TaskForm extends Vue {
     this.form.groups.forEach((group, index) => {
       const schema: any = {};
       group.schema.forEach(entry => {
+
+        //hier i18n
         const field: any = {
           ...entry,
           "outlined": true,
           "class": "v-input-generated",
           "auto-grow": true,
-          "locale": "de",
+          "locale": "de"
         };
+
 
         if (this.readonlyMode) {
           field["readonly"] = true;
